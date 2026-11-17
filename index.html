@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WiT Hub</title>
+<meta name="description" content="WiT Hub: open source programs, internships, hackathons, conferences and the club calendar for Women in Tech at CMU-Africa. A demo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo"><div class="wrap"><b>DEMO</b> A preview of what a WiT hub could look like, built by Favour James (FJ). Not an official WiT CMU-Africa site.</div></div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="WiT Hub home">
+      <img src="assets/wit-lockup.png" alt="Women in Tech, CMU-Africa" width="260" height="89">
+      <span class="hubword">WIT <span>HUB</span></span>
+    </a>
+    <nav class="main" aria-label="Sections">
+      <a href="#opportunities">Opportunities</a>
+      <a href="#hackathons" data-jump="hackathon">Hackathons</a>
+      <a href="#conferences" data-jump="conference">Conferences</a>
+      <a href="#calendar">Calendar</a>
+      <a href="#voice">Your voice</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap grid">
+      <div>
+        <div class="mono eyebrow">Women in Tech · CMU-Africa</div>
+        <h1>WIT <span>HUB</span></h1>
+        <p class="lede">Every open door in one place: open source programs, internships and fellowships, hackathons and conferences, plus the club calendar. Updated every month with The Opportunity Drop.</p>
+        <div class="stats" id="stats"></div>
+      </div>
+      <div class="feature" id="feature"></div>
+    </div>
+  </section>
+
+  <section class="block" id="opportunities" style="padding-top:20px">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="mono eyebrow">The Opportunity Drop</div>
+          <h2>WHAT'S <span>OPEN</span></h2>
+          <p>Sorted by what closes first. Every entry links to where its dates were checked, so you can always confirm before you apply.</p>
+        </div>
+        <button class="btn ghost" id="shareBtn" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>
+          Copy link to this view
+        </button>
+      </div>
+
+      <div class="controls">
+        <div class="tabs" role="group" aria-label="Category" id="tabs"></div>
+        <div class="row2">
+          <label class="search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="q" type="search" placeholder="Search: GSoC, NLP, Zindi, paid, remote..." aria-label="Search opportunities">
+          </label>
+          <button class="chipf" data-st="open" aria-pressed="false">Open now</button>
+          <button class="chipf" data-st="soon" aria-pressed="false">Closing in 14 days</button>
+          <button class="chipf" data-st="upcoming" aria-pressed="false">Coming up</button>
+          <button class="chipf" id="showClosed" aria-pressed="false">Show closed</button>
+        </div>
+      </div>
+
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
+
+  <section class="block" id="calendar" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="mono eyebrow">Semester calendar <span class="samplebadge">SAMPLE</span></div>
+          <h2>WHAT'S <span>ON</span></h2>
+          <p>Club events here are a sample of what one semester could look like, out in week 1 so you can plan around it. Opportunity deadlines are real and come straight from the board above.</p>
+        </div>
+      </div>
+      <div class="cal">
+        <div class="month">
+          <div class="mhead">
+            <h3 id="mtitle"></h3>
+            <div class="mnav">
+              <button id="prevM" aria-label="Previous month">‹</button>
+              <button id="nextM" aria-label="Next month">›</button>
+            </div>
+          </div>
+          <div class="grid7" id="mgrid"></div>
+          <div class="mobnote">Use the arrows to move between months. This month's events are listed below.</div>
+          <div class="legend">
+            <span><i style="background:var(--navy)"></i>Club event (sample)</span>
+            <span><i style="background:#FFB8C2"></i>Deadline</span>
+            <span><i style="background:#A9DEC6"></i>Hackathon starts</span>
+          </div>
+        </div>
+        <div class="agenda">
+          <h4 id="atitle">This month</h4>
+          <div id="alist"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="voice">
+    <div class="wrap">
+      <div class="shead">
+        <div>
+          <div class="mono eyebrow">Your voice</div>
+          <h2>TELL <span>US</span></h2>
+          <p>Two ways members will shape what the club does next. These open with the hub's full launch.</p>
+        </div>
+      </div>
+      <div class="voice">
+        <div class="panel">
+          <span class="soon">COMING SOON</span>
+          <div class="mono eyebrow">Monthly</div>
+          <h3>SUGGESTION BOX</h3>
+          <p>Drop an idea any time: a workshop topic, a company to visit, a speaker you'd love to meet. Anonymous if you want. Suggestions get reviewed at the end of every month, and you'll see what was picked.</p>
+          <div class="fake">What should WiT do next?</div>
+          <div class="fake tall">Tell us more (optional)</div>
+          <button class="btn red" disabled>Send suggestion</button>
+        </div>
+        <div class="panel dark">
+          <span class="soon">COMING SOON</span>
+          <div class="mono" style="color:var(--rose)">End of every semester</div>
+          <h3>FEEDBACK SURVEY</h3>
+          <p>A short survey on what worked and what didn't. The answers feed straight into the impact report.</p>
+          <ul>
+            <li>Which events were worth your time?</li>
+            <li>What should we keep, change or drop?</li>
+            <li>Promised vs. delivered: how did we do?</li>
+          </ul>
+          <div class="stars" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+          <button class="btn white" disabled>Take the survey</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="tag">WIT <span>HUB</span> · DEMO</div>
+      <div id="checked" style="margin-top:6px"></div>
+    </div>
+    <div style="max-width:460px">Spotted an opportunity that should be here? It goes into the next Opportunity Drop. Built by <b>FJ</b> for the WiT community at CMU-Africa. <b>#LetsBUILDWiT</b></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  const H = window.HUB;
+  const DAY = 86400000;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const NEWTAB = !/claude/i.test(location.hostname); // open external links in a new tab on GitHub Pages
+  const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const CATS = [
+    {k:"all", n:"All"},
+    {k:"opensource", n:"Open source"},
+    {k:"internship", n:"Internships & fellowships"},
+    {k:"hackathon", n:"Hackathons"},
+    {k:"conference", n:"Conferences"}
+  ];
+  const CATLABEL = {opensource:"Open source", internship:"Internship / fellowship", hackathon:"Hackathon", conference:"Conference"};
+
+  const pd = s => { if(!s) return null; const [y,m,d]=s.split("-").map(Number); return new Date(y,m-1,d); };
+  const days = d => Math.round((d - today)/DAY);
+  const fmt = d => d.getDate()+" "+MON[d.getMonth()]+" "+d.getFullYear();
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const ext = url => `href="${esc(url)}"` + (NEWTAB ? ' target="_blank" rel="noopener"' : "");
+  const ymd = d => d.getFullYear()+String(d.getMonth()+1).padStart(2,"0")+String(d.getDate()).padStart(2,"0");
+  const gcal = (title, d, details) => {
+    const e = new Date(d.getTime()+DAY);
+    return "https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(title)+"&dates="+ymd(d)+"/"+ymd(e)+"&details="+encodeURIComponent(details||"");
+  };
+
+  // ---------- status ----------
+  function status(it){
+    const dl = pd(it.deadline), op = pd(it.opens), ev = pd(it.event);
+    if (dl){
+      const n = days(dl);
+      if (n < 0) return {k:"closed", label:"Closed", left:"Closed", n};
+      if (op && op > today){ const o=days(op); return {k:"upcoming", label:"Opens soon", left: o===1?"Opens tomorrow":`Opens in ${o}<small>days</small>`, n, sortD:dl}; }
+      if (n <= 14) return {k:"soon", label:"Closing soon", left: n===0?"Closes today":n===1?"1<small>day left</small>":`${n}<small>days left</small>`, n, hot:true, sortD:dl};
+      return {k:"open", label:"Open", left:`${n}<small>days left</small>`, n, sortD:dl};
+    }
+    if (it.rolling && !it.expected) return {k:"open", label:"Open · rolling", left:"Rolling", sortD:new Date(2100,0,1)};
+    if (it.expected || op) {
+      const ref = op || new Date(2100,0,1);
+      return {k:"upcoming", label: it.expected ? "Expected" : "Upcoming", left: op ? "~"+MON[op.getMonth()]+" "+op.getFullYear() : "TBA", sortD: ref};
+    }
+    if (ev){
+      const n = days(ev);
+      if (n < -7) return {k:"closed", label:"Past", left:"Past"};
+      return {k:"event", label:"Event", left: n<=0 ? "This week" : `${n}<small>days to go</small>`, sortD:ev};
+    }
+    return {k:"upcoming", label:"Upcoming", left:"TBA", sortD:new Date(2100,0,1)};
+  }
+  const ORDER = {soon:0, open:1, event:2, upcoming:3, closed:4};
+  H.items.forEach(it => { it._s = status(it); it._hay = (it.title+" "+it.org+" "+it.blurb+" "+(it.tags||[]).join(" ")+" "+CATLABEL[it.cat]+" "+(it.prize||"")).toLowerCase(); });
+
+  // ---------- stats + featured ----------
+  const live = H.items.filter(i => i._s.k==="open" || i._s.k==="soon");
+  const soon = H.items.filter(i => i._s.k==="soon");
+  const nextDl = H.items.filter(i => i._s.k!=="closed" && i.deadline && pd(i.deadline)>=today && !(i.opens && pd(i.opens)>today)).sort((a,b)=>pd(a.deadline)-pd(b.deadline))[0];
+  document.getElementById("stats").innerHTML =
+    `<div class="stat"><div class="n">${live.length}</div><div class="l">open right now</div></div>`+
+    `<div class="stat hot"><div class="n">${soon.length}</div><div class="l">closing in 14 days</div></div>`+
+    `<div class="stat"><div class="n">${H.items.filter(i=>i.cat==="hackathon"&&i._s.k!=="closed").length}</div><div class="l">hackathons live or coming</div></div>`+
+    (nextDl ? `<div class="stat"><div class="n">${Math.max(0,days(pd(nextDl.deadline)))}d</div><div class="l">to next deadline</div></div>` : "");
+
+  const F = H.items.find(i => i.featured && i._s.k!=="closed") || nextDl;
+  const fe = document.getElementById("feature");
+  if (F){
+    const op = pd(F.opens), dl = pd(F.deadline);
+    const target = (op && op>today) ? op : dl;
+    const tlabel = (op && op>today) ? "Starts in" : "Closes in";
+    fe.innerHTML = `
+      <div class="mono">${F.featured ? "Featured · on our campus" : "Next deadline"}</div>
+      <h3>${esc(F.title)}</h3>
+      <p>${esc(F.blurb)}</p>
+      <div class="mono" style="color:#C9D3E8;margin-bottom:6px">${tlabel}</div>
+      <div class="cd" id="cd"></div>
+      <div class="row">
+        <a class="btn red" ${ext(F.apply)}>${/zindi/.test(F.apply)?"Join on Zindi":"Apply"}</a>
+        <a class="btn ghostw" ${ext(gcal(F.title, target, F.when+"\n"+F.apply))}>Add to calendar</a>
+      </div>`;
+    const tick = () => {
+      let ms = target.getTime() - Date.now(); if (ms<0) ms=0;
+      const d=Math.floor(ms/DAY), h=Math.floor(ms%DAY/3600000), m=Math.floor(ms%3600000/60000), s=Math.floor(ms%60000/1000);
+      document.getElementById("cd").innerHTML = [[d,"days"],[h,"hrs"],[m,"min"],[s,"sec"]].map(([v,l])=>`<div><b>${String(v).padStart(2,"0")}</b><small>${l}</small></div>`).join("");
+    };
+    tick(); setInterval(tick, 1000);
+  } else fe.style.display="none";
+
+  // ---------- board ----------
+  const state = {cat:"all", q:"", st:new Set(), closed:false};
+  const hashCat = {"#opensource":"opensource","#open-source":"opensource","#internships":"internship","#hackathons":"hackathon","#conferences":"conference"};
+  if (hashCat[location.hash]) { state.cat = hashCat[location.hash]; setTimeout(()=>document.getElementById("opportunities").scrollIntoView(),50); }
+
+  const tabs = document.getElementById("tabs");
+  function drawTabs(){
+    tabs.innerHTML = CATS.map(c => {
+      const n = H.items.filter(i => (c.k==="all"||i.cat===c.k) && i._s.k!=="closed").length;
+      return `<button class="tab" data-cat="${c.k}" aria-pressed="${state.cat===c.k}">${c.n}<span class="c">${n}</span></button>`;
+    }).join("");
+  }
+  tabs.addEventListener("click", e => { const b=e.target.closest(".tab"); if(!b) return; state.cat=b.dataset.cat; drawTabs(); draw(); });
+  document.getElementById("q").addEventListener("input", e => { state.q=e.target.value.trim().toLowerCase(); draw(); });
+  document.querySelectorAll(".chipf[data-st]").forEach(b => b.addEventListener("click", () => {
+    const k=b.dataset.st; state.st.has(k)?state.st.delete(k):state.st.add(k); b.setAttribute("aria-pressed", state.st.has(k)); draw();
+  }));
+  const sc = document.getElementById("showClosed");
+  sc.addEventListener("click", () => { state.closed=!state.closed; sc.setAttribute("aria-pressed", state.closed); draw(); });
+  document.querySelectorAll("[data-jump]").forEach(a => a.addEventListener("click", e => {
+    e.preventDefault(); state.cat=a.dataset.jump; drawTabs(); draw();
+    history.replaceState(null,"", a.getAttribute("href"));
+    document.getElementById("opportunities").scrollIntoView({behavior:"smooth"});
+  }));
+
+  function card(it){
+    const s = it._s, dl = pd(it.deadline);
+    const calBtn = (dl && s.k!=="closed") ? `<a class="btn ghost" ${ext(gcal("Deadline: "+it.title, dl, it.when+"\nApply: "+it.apply+"\nvia WiT Hub"))}>+ Calendar</a>` : "";
+    return `<article class="card ${s.k==="closed"?"isclosed":""}">
+      <div class="meta"><span class="cat">${CATLABEL[it.cat]}</span><span class="status s-${s.k}">${s.label}</span></div>
+      <h3>${esc(it.title)}</h3>
+      <div class="org">${esc(it.org)}</div>
+      <p>${esc(it.blurb)}</p>
+      ${it.prize ? `<div class="prize">Prize: ${esc(it.prize)}</div>` : ""}
+      <div class="tags">${(it.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
+      <div class="when"><div class="d">${esc(it.when)}</div><div class="left ${s.hot?"hot":""}">${s.left}</div></div>
+      <div class="actions"><a class="btn red" ${ext(it.apply)}>${it.cat==="conference"?"Details":"Apply / details"}</a>${calBtn}</div>
+      <div class="src">Dates checked ${fmt(pd(H.checked))} · <a ${ext(it.source)}>source</a>${it.expected?" · estimated from last year":""}</div>
+    </article>`;
+  }
+  function draw(){
+    let list = H.items.filter(i =>
+      (state.cat==="all" || i.cat===state.cat) &&
+      (!state.q || i._hay.includes(state.q)) &&
+      (state.closed || i._s.k!=="closed") &&
+      (!state.st.size || state.st.has(i._s.k) || (state.st.has("open") && i._s.k==="soon"))
+    );
+    list.sort((a,b) => (ORDER[a._s.k]-ORDER[b._s.k]) || ((a._s.sortD||0)-(b._s.sortD||0)));
+    document.getElementById("cards").innerHTML = list.length ? list.map(card).join("") : `<div class="empty">Nothing matches that yet. Try another filter, or check back after the next Opportunity Drop.</div>`;
+  }
+  drawTabs(); draw();
+
+  // share link
+  const toast = msg => { const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("on"); setTimeout(()=>t.classList.remove("on"),1800); };
+  document.getElementById("shareBtn").addEventListener("click", async () => {
+    const rev = {opensource:"#opensource", internship:"#internships", hackathon:"#hackathons", conference:"#conferences", all:"#opportunities"};
+    const url = location.href.split("#")[0] + rev[state.cat];
+    try { await navigator.clipboard.writeText(url); toast("Link copied: "+rev[state.cat].slice(1)); }
+    catch(e){ toast(url); }
+  });
+
+  // ---------- calendar ----------
+  const evs = H.calendar.map(e => ({...e, d:pd(e.date)}));
+  H.items.forEach(it => {
+    if (it.deadline) evs.push({d:pd(it.deadline), title:"Deadline: "+it.title, kind:"deadline", link:it.apply});
+    if (it.cat==="hackathon" && it.opens) evs.push({d:pd(it.opens), title:"Starts: "+it.title, kind:"start", link:it.apply});
+  });
+  evs.sort((a,b)=>a.d-b.d || (a.kind==="club"?-1:1));
+  const first = new Date(2026,10,1), last = new Date(2027,3,1);
+  let cur = new Date(today.getFullYear(), today.getMonth(), 1);
+  if (cur<first) cur=new Date(first); if (cur>last) cur=new Date(last);
+
+  function drawCal(){
+    const y=cur.getFullYear(), m=cur.getMonth();
+    document.getElementById("mtitle").textContent = MONTHS[m].toUpperCase()+" "+y;
+    document.getElementById("prevM").disabled = cur<=first;
+    document.getElementById("nextM").disabled = cur>=last;
+    const start = (new Date(y,m,1).getDay()+6)%7; // Monday first
+    const nd = new Date(y,m+1,0).getDate();
+    let h = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map(d=>`<div class="dow">${d}</div>`).join("");
+    for (let i=0;i<start;i++) h+=`<div class="day out"></div>`;
+    for (let d=1; d<=nd; d++){
+      const dt=new Date(y,m,d);
+      const de = evs.filter(e=>e.d.getTime()===dt.getTime());
+      h += `<div class="day ${dt.getTime()===today.getTime()?"today":""}"><div class="num">${d}</div>${de.slice(0,3).map(e=>`<span class="ev ${e.kind}" title="${esc(e.title)}">${esc(e.title.replace(/^Deadline: /,"⏰ ").replace(/^Starts: /,"▶ "))}</span>`).join("")}${de.length>3?`<span class="ev" style="color:var(--muted)">+${de.length-3} more</span>`:""}</div>`;
+    }
+    document.getElementById("mgrid").innerHTML = h;
+    const me = evs.filter(e=>e.d.getFullYear()===y && e.d.getMonth()===m);
+    document.getElementById("atitle").textContent = MONTHS[m]+" "+y+" · "+me.length+" event"+(me.length===1?"":"s");
+    document.getElementById("alist").innerHTML = me.length ? me.map(e=>`
+      <div class="ai ${e.kind}">
+        <div class="dt"><b>${e.d.getDate()}</b><small>${MON[e.d.getMonth()].toUpperCase()}</small></div>
+        <div><div class="t">${esc(e.title)}</div>
+          <div class="k">${e.kind==="club"?(e.real?"Club event":"Club event · sample")+(e.note?" · "+esc(e.note):""):e.kind==="deadline"?"Opportunity deadline":"Hackathon launch"}</div>
+          <a class="g" ${ext(gcal(e.title, e.d, (e.note||"")+(e.link?"\n"+e.link:"")+"\nvia WiT Hub"))}>+ Add to Google Calendar</a></div>
+      </div>`).join("") : `<div class="k" style="color:var(--muted)">Nothing scheduled this month.</div>`;
+  }
+  document.getElementById("prevM").onclick = () => { cur=new Date(cur.getFullYear(),cur.getMonth()-1,1); drawCal(); };
+  document.getElementById("nextM").onclick = () => { cur=new Date(cur.getFullYear(),cur.getMonth()+1,1); drawCal(); };
+  drawCal();
+
+  document.getElementById("checked").textContent = "Dates last checked " + fmt(pd(H.checked)) + ". Always confirm on the official page before you apply.";
+})();
+</script>
+</body>
+</html>
