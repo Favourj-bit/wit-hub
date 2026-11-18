@@ -1,6 +1,6 @@
-# WiT Hub (demo)
+# WiT Hub (MVP)
 
-A demo of a one-stop hub for Women in Tech at CMU-Africa: open source programs, internships and fellowships, hackathons, conferences, a semester calendar, and (coming soon) a suggestion box and feedback survey.
+The first version (MVP) of a one-stop hub for Women in Tech at CMU-Africa: open source programs, internships and fellowships, hackathons, conferences, a semester calendar, and (coming soon) a suggestion box and feedback survey.
 
 ## Update the listings
 Edit `data.js` only. Each entry has a category, dates, an apply link and a source link. Statuses (Open, Closing soon, Upcoming, Closed) and countdowns are worked out automatically from today's date.
