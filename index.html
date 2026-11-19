@@ -284,7 +284,7 @@
       <div class="tags">${(it.tags||[]).map(t=>`<span>${esc(t)}</span>`).join("")}</div>
       <div class="when"><div class="d">${esc(it.when)}</div><div class="left ${s.hot?"hot":""}">${s.left}</div></div>
       <div class="actions"><a class="btn red" ${ext(it.apply)}>${it.cat==="conference"?"Details":"Apply / details"}</a>${calBtn}</div>
-      <div class="src">Dates checked ${fmt(pd(H.checked))} · <a ${ext(it.source)}>source</a>${it.expected?" · estimated from last year":""}</div>
+      <div class="src">Dates checked ${fmt(pd(it.checked||H.checked))} · <a ${ext(it.source)}>source</a>${it.expected?" · estimated from last year":""}</div>
     </article>`;
   }
   function draw(){

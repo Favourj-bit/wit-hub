@@ -198,6 +198,64 @@ window.HUB = {
       source: "https://simplify.jobs/l/Top-Summer-Internships-2027"
     },
 
+    /* -------- SUMMER RESEARCH INTERNSHIPS (abroad) --------
+       Most need you to still be a student during the internship. */
+    {
+      cat: "internship", checked: "2026-11-19",
+      title: "Summer@EPFL 2027",
+      org: "EPFL School of Computer and Communication Sciences, Switzerland",
+      blurb: "A 2 to 3 month research internship in an EPFL lab for BSc and MSc students in computer science, data, communications and related fields. Comes with a monthly allowance of about CHF 1,800. You must still be a student during the internship.",
+      deadline: "2026-11-29",
+      when: "Closes 29 Nov 2026 · Internship between May and Sep 2027",
+      tags: ["Summer research", "Switzerland", "Paid"],
+      apply: "https://summer.epfl.ch",
+      source: "https://scholarshipsforafricans.com/fr/bourses/summer-epfl-computer-and-communication-sciences"
+    },
+    {
+      cat: "internship", checked: "2026-11-19",
+      title: "ETH Zurich Student Summer Research Fellowship 2027",
+      org: "ETH Zurich Department of Computer Science, Switzerland",
+      blurb: "Two months of research in an ETH computer science lab, open to BS and MS students of all nationalities. Includes CHF 4,000, travel and visa costs, and arranged housing. No recommendation letters needed.",
+      deadline: "2026-12-16",
+      when: "Closes 16 Dec 2026, 1 PM CET · Runs 2 Jul to 27 Aug 2027",
+      tags: ["Summer research", "Switzerland", "Fully funded"],
+      apply: "https://inf.ethz.ch/studies/summer-research-fellowship.html",
+      source: "https://fellowshipsguide.com/?p=7903"
+    },
+    {
+      cat: "internship", checked: "2026-11-19",
+      title: "CERN Summer Student Programme 2027 (incl. openlab)",
+      org: "CERN, Geneva",
+      blurb: "Summer projects at CERN for BSc and MSc students in physics, engineering and computer science, from member and non-member states. Pays about CHF 94 a day. CERN openlab, the computing track, has the same deadline. Students from non-member states usually stay for 8 weeks.",
+      deadline: "2027-01-21",
+      when: "Closes 21 Jan 2027, 23:59 Geneva time",
+      tags: ["Summer research", "Switzerland", "Paid"],
+      apply: "https://careers.cern",
+      source: "https://opportunitiesfeed.com/?p=13614"
+    },
+    {
+      cat: "internship", checked: "2026-11-19",
+      title: "Aalto Science Institute International Summer Research Programme 2027",
+      org: "Aalto University, Finland",
+      blurb: "A paid 12-week research position between June and August, in computer science, engineering and the sciences. Projects are posted in mid December, and you pick the ones that fit you.",
+      deadline: "2027-01-31", opens: "2027-01-07",
+      when: "Opens 7 Jan 2027, closes 31 Jan 2027",
+      tags: ["Summer research", "Finland", "Paid"],
+      apply: "https://www.aalto.fi/en/aalto-science-institute-asci/aalto-science-institute-international-summer-research-programme",
+      source: "https://www.aalto.fi/en/aalto-university-science-institute-asci/how-to-apply-for-the-asci-international-summer-research-programme"
+    },
+    {
+      cat: "internship", checked: "2026-11-19",
+      title: "KAUST Visiting Student Research Program (VSRP)",
+      org: "KAUST, Saudi Arabia",
+      blurb: "A 3 to 6 month research internship for 3rd-year BSc and MSc students in STEM. Comes with about $1,000 a month, housing and return airfare. Applications are open all year, so apply early to get the project you want.",
+      deadline: null, rolling: true,
+      when: "Open all year",
+      tags: ["Research", "Saudi Arabia", "Fully funded"],
+      apply: "https://vsrp.kaust.edu.sa/",
+      source: "https://cemse.kaust.edu.sa/node/7003"
+    },
+
     /* ---------------- CONFERENCES ---------------- */
     {
       cat: "conference",
